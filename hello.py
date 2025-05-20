@@ -1,4 +1,4 @@
-i#!/usr/bin/env python3
+#!/usr/bin/env python3
 
 # Este programa imprime Hello, world!
 
@@ -10,7 +10,7 @@ __version__ = "0.01"
 __author__ = "Pedro Franzoi"
 __license__ = "Unlicense"
 
-import  os
+import os
 
 current_language = os.getenv("LANG", "en.US")[:5]
 
