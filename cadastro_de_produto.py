@@ -3,24 +3,37 @@
 """Cadastro de produto"""
 __version__ = "0.1.0"
 
+import pprint
+
 produto = {
-    "nome": "Coca_cola"
-    produto_cor1 = "preto"
-    produto_cor2 = "vermelho"
-    produto_cor3 = "branco"
-    produto_preco = 5.69
-    produto_dimensao_altura = 5.50
-    produto_dimensao_largura = 3
-    produto_em_estoque = True
-    produto_codigo = 1234
-    produto_codebar = None      
+    "nome": "Coca_cola",
+    "cores": ["preto", "vermelho", "branco"], 
+    "preco": 5.69,
+    "dimensao": {
+        "altura": 12.1,
+        "largura": 0.8,
+    },
+    "em_estoque": True,
+    "codigo": 1234,
+    "codebar": None      
 }
 
+cliente = {
+    "nome": "Pedro"
+}
 
-compra = ("Pedro", produto_nome, 3)
-total_compra = compra[2] * produto_preco
+compra = {
+    "cliente": cliente,
+    "produto": produto,
+    "quantidade": 3
+}
+
+#pprint.pprint(compra)
+
+total_compra = compra['quantidade'] * compra ['produto']['preco']
 
 print(
-    f"O cliente {compra[0]} comprou {compra[1]}"
-    f" e pagou o total de {total_compra}"    
+    f"O cliente {compra['cliente']['nome']}"
+    f" comprou {compra['quantidade']} unidades de {compra['produto']['nome']}"
+    f" e pagou o total de BRL {total_compra} "
 )
